@@ -1,0 +1,54 @@
+version: '3'
+
+services:
+  client:
+    build: ./react-client
+    ports:
+      - 3000:3000
+    volumes: 
+      - ./react-client:/usr/src/app
+      - node_modules:/usr/src/app/node_modules
+    networks:
+      - node-anand-network
+      
+
+  server:
+    build: ./express-server
+    image: node-app
+    command: yarn dev -L
+    environment:
+      - MONGODB_URL=mongodb://mongodb:27017/uplifting_women
+    ports:
+      - '3001:3000'
+    depends_on:
+      - mongodb
+    volumes:
+      - ./express-server:/usr/src/node-app
+      - node_modules_b:/usr/src/app/node_modules
+    networks:
+      - node-anand-network
+
+  mongodb:
+    image: mongo:4.2.1-bionic
+    ports:
+      - '27017:27017'
+    volumes:
+      - dbdata:/data/db
+    networks:
+      - node-anand-network
+
+volumes: 
+  node_modules:
+  node_modules_b:
+  dbdata:
+    
+networks:
+  node-anand-network:
+    driver: bridge
+
+  
+
+
+    
+
+    
