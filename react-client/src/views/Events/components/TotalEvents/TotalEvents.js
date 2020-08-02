@@ -8,6 +8,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import {Grid, Button, Card} from '@material-ui/core'
+import EventsForm from './EventsForm'
 
 const useStyles = makeStyles({
   table: {
@@ -67,12 +68,11 @@ export default class TotalEvents extends Component {
       justify="center"
       alignItems="center" >
       <Grid container item xs={12} >
-          <Button variant="contained" color="primary">
-            Add New 
-          </Button>
+         <EventsForm/>
       </Grid>
       
       <Grid container item xs={12} style={{marginTop: 40}} >
+     
         <EventTableList />
       </Grid>
     </Grid>
