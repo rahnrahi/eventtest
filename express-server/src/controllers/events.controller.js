@@ -39,7 +39,6 @@ const deleteEvent = catchAsync(async (req, res) => {
 
 const getevents = catchAsync(async (req, res) => {
     const filter  = pick(req.query, ['title', 'description', 'topic', 'eventdate']);
-    console.log(".......filter", filter)
     const options = pick(req.query, ['sortBy', 'limit', 'page']);
     const result  = await Events.paginate(filter, options);
     res.send(result)
