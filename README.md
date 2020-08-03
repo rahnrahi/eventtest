@@ -1,4 +1,4 @@
-# Rahi Event Mern Repo
+# Rahi Event MERN Repo
 
 
 Dockerized MERN stack developement environment
@@ -14,5 +14,5 @@ URLS:
 ```
 UI:   http://localhost:3000/
 API(BASIC SWAGGGER):  http://localhost:3001/v1/docs/
-Mongo Db : MONGODB_URL=mongodb://mongodb:27017/db
+Mongo Db : MONGODB_URL=mongodb://mongodb:27017/eventdb
 ```
