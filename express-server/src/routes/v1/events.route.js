@@ -6,11 +6,11 @@ const router = express.Router();
 
 router.route('/')
       .post(auth('getUsers'),eventsController.createEvent)
-      .get(auth('getUsers'), eventsController.getevents);
+      .get(eventsController.getevents);
 
 router
   .route('/:id')
-  .get(auth('getUsers'), eventsController.getEvent)
+  .get(eventsController.getEvent)
   .patch(auth('manageUsers'),eventsController.updateEvent)
   .delete(auth('manageUsers'), eventsController.deleteEvent);
 
